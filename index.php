@@ -1,6 +1,6 @@
 <?php
 include __DIR__ . '/Models/model.php';
-var_dump($hotels);
+// var_dump($hotels);
 include __DIR__ . '/Views/header.php';
 ?>
 

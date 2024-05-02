@@ -44,7 +44,7 @@ a {
 
 .ms_screen {
     height: 100vh;
-    background-color: green;
+    background-color: black;
     display: flex;
     align-items: center;
     justify-content: center;
