@@ -6,10 +6,7 @@ foreach ($hotels as $hotel) {
     $show = true;
 
     if (isset($_GET['withParking'])) {
-        if ($_GET['withParking'] == 'on' && $hotel['parking'] == false) {
-            $show = false;
-        }
-        if ($_GET['withParking'] == 'off' && $hotel['parking'] == true) {
+        if ($_GET['withParking'] == 'on' && !$hotel['parking']) {
             $show = false;
         }
     }
@@ -21,10 +18,9 @@ foreach ($hotels as $hotel) {
     }
 
     if ($show) {
-        $tBody .= '<tr>' . '<td>' . $hotel['name'] . '</td>' . '<td>' . $hotel['description'] . '</td>' . '<td>' . $hotel['parking'] . '</td>' . '<td>' . $hotel['vote'] . '</td>' . '<td>' . $hotel['distance_to_center'] . '</td>' . '</tr>';
+        $tBody .= '<tr>' . '<td>' . $hotel['name'] . '</td>' . '<td>' . $hotel['description'] . '</td>' . '<td>' . ( $hotel['parking'] ? 'Yes' : 'No' ) . '</td>' . '<td>' . $hotel['vote'] . '</td>' . '<td>' . $hotel['distance_to_center'] . '</td>' . '</tr>';
     }
 }
-
 ?>
 <form action="index.php" method="GET">
     <label for="withParking">Parcheggio:</label>
